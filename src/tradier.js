@@ -379,4 +379,4 @@ class Tradier {
   // endregion
 }
 
-module.exports = Tradier;
+export default Tradier;
