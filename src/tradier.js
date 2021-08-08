@@ -317,19 +317,19 @@ class Tradier {
 
   // region Watchlists
   getWatchlists() {
-    return this.get('/watchlists').then(
+    return this.get(URLS['sandbox'] + '/watchlists').then(
       ({ data: { watchlists } }) => watchlists
     );
   }
 
   getWatchlist(id) {
-    return this.get(`/watchlists/${id}`).then(
+    return this.get(URLS['sandbox'] + `/watchlists/${id}`).then(
       ({ data: { watchlist } }) => watchlist
     );
   }
 
   createWatchlist(name, symbols) {
-    return this.post('/watchlists', {
+    return this.post(URLS['sandbox'] + '/watchlists', {
       name,
       symbols: parseSymbols(symbols),
     }).then(({ data: { watchlist } }) => watchlist);
