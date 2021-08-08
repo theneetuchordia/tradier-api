@@ -184,7 +184,7 @@ class Tradier {
 
   // region Market Data
   getQuote(symbols) {
-    return this.get('markets/quotes', {
+    return this.get(URLS['sandbox'] + 'markets/quotes', {
       symbols: ensureArray(symbols).join(','),
     }).then(
       ({
